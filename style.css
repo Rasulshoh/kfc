@@ -1,0 +1,539 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #171719;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.filtrlar {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+main {
+  width: 100%;
+  overflow: hidden;
+}
+
+.qizil {
+  color: #fff;
+  background: #f52d25;
+}
+
+.bosh {
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 86px;
+  padding: 0 8%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo,
+.footer-logo {
+  font: italic 900 48px Georgia, serif;
+}
+
+.menyu,
+.belgi {
+  display: flex;
+  align-items: center;
+}
+
+.menyu {
+  gap: 34px;
+  font-size: 15px;
+}
+
+.belgi {
+  gap: 16px;
+}
+
+.belgi img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+}
+
+.qahramon {
+  position: relative;
+  height: 82vh;
+  min-height: 590px;
+  display: flex;
+  align-items: center;
+  background:
+    radial-gradient(circle at 10% 34%, transparent 0 62px, #ff4937 63px 135px, transparent 136px),
+    radial-gradient(circle at 38% 0%, transparent 0 54px, #ff4937 55px 85px, transparent 86px),
+    linear-gradient(120deg, #ff392c, #ef1e21);
+  overflow: hidden;
+}
+
+.qahramon::after {
+  content: "";
+  position: absolute;
+  right: -120px;
+  top: -40px;
+  width: 380px;
+  height: 380px;
+  border: 55px solid rgba(255, 90, 53, 0.32);
+  border-radius: 50%;
+}
+
+.matn {
+  position: relative;
+  z-index: 1;
+  width: 55%;
+  padding-left: 8%;
+  padding-top: 42px;
+}
+
+.matn h1 {
+  font-size: clamp(34px, 4vw, 54px);
+  line-height: 1.02;
+  font-weight: 900;
+  letter-spacing: -2px;
+  white-space: nowrap;
+  margin-bottom: 22px;
+}
+
+.matn p {
+  max-width: 480px;
+  font-size: 15px;
+  line-height: 1.45;
+  margin-bottom: 34px;
+}
+
+.tugma {
+  width: 226px;
+  height: 53px;
+  border: 3px solid #fff;
+  border-radius: 30px;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+}
+
+.nuqta {
+  display: flex;
+  gap: 6px;
+  margin-top: 56px;
+}
+
+.nuqta i {
+  width: 21px;
+  height: 8px;
+  background: #ff8a7d;
+  border-radius: 10px;
+}
+
+.nuqta .tanla {
+  background: #fff;
+}
+
+.asosiy-rasm {
+  position: absolute;
+  width: 51%;
+  height: 95%;
+  object-fit: contain;
+  right: 5%;
+  bottom: 0;
+}
+
+.taomlar {
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+  color: #111;
+  background: #fff;
+}
+
+.strelka {
+  color: #f33b2d;
+  font-size: 38px;
+  font-weight: 300;
+}
+
+.taom {
+  position: relative;
+  width: 120px;
+  height: 122px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.taom img {
+  width: 100px;
+  height: 86px;
+  object-fit: contain;
+  filter: url(#qora-fon);
+}
+
+.taom b {
+  font-size: 9px;
+  white-space: nowrap;
+}
+
+.taom.tanlangan::after {
+  content: "";
+  width: 74px;
+  height: 3px;
+  background: #f52d25;
+}
+
+.taklif {
+  position: relative;
+  padding: 54px 8% 70px;
+  background: #faeee4;
+}
+
+.taklif::before {
+  content: "KFC";
+  position: absolute;
+  left: -30px;
+  top: 40px;
+  font: italic 900 300px Georgia, serif;
+  color: rgba(151, 105, 77, 0.07);
+}
+
+.sarlavha-taklif {
+  position: absolute;
+  z-index: 1;
+  top: -20px;
+  left: 50%;
+  width: 145px;
+  height: 42px;
+  transform: translateX(-50%);
+  border-radius: 25px;
+  background: #ffba18;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  font-weight: 800;
+}
+
+.kartalar {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 24px 18px;
+}
+
+.karta {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  padding: 20px;
+  border-radius: 11px;
+  background: #fff;
+  box-shadow: 0 12px 22px rgba(152, 86, 37, 0.12);
+}
+
+.karta.kichik {
+  grid-column: span 2;
+  height: 166px;
+}
+
+.karta.keng {
+  grid-column: span 3;
+  height: 186px;
+}
+
+.karta h2 {
+  position: relative;
+  z-index: 1;
+  font-size: 21px;
+  line-height: 1.1;
+  margin: 0 0 14px;
+}
+
+.karta p {
+  position: relative;
+  z-index: 1;
+  color: #888;
+  font-size: 12px;
+  margin-bottom: 13px;
+}
+
+.karta .narx {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  padding: 8px 15px;
+  border-radius: 20px;
+  background: #f63b2b;
+  color: #fff;
+  font-size: 13px;
+}
+
+.doira {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  width: 118px;
+  height: 118px;
+  border-radius: 50%;
+  background: #ffbf17;
+}
+
+.mahsulot {
+  position: absolute;
+  z-index: 0;
+  width: 42%;
+  height: 88%;
+  right: 8px;
+  bottom: 2px;
+  object-fit: contain;
+  filter: url(#qora-fon);
+}
+
+.karta.keng .mahsulot {
+  width: 48%;
+  height: 108%;
+  right: 5px;
+  bottom: -10px;
+}
+
+.yangi {
+  position: absolute;
+  z-index: 1;
+  top: 17px;
+  right: 15px;
+  padding: 4px 10px;
+  transform: rotate(-27deg);
+  background: #fb402f;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.qizil-karta {
+  color: #fff;
+  background: #f42c27;
+}
+
+.qizil-karta p {
+  color: #fff;
+}
+
+.qizil-karta .narx {
+  background: #ffbd18;
+  color: #171719;
+}
+
+.karta.keng h2 {
+  font-size: 22px;
+  margin: 12px 0 14px;
+}
+
+.karta.keng p {
+  margin-bottom: 8px;
+}
+
+.katta-narx {
+  position: relative;
+  z-index: 1;
+  color: #f5382c;
+  font-size: 13px;
+}
+
+.katta-narx img {
+  display: block;
+  width: 160px;
+  height: 48px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+.ilova {
+  position: relative;
+  line-height: 0;
+  background: #faeee4;
+}
+
+.ilova-rasm {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ilova-matn {
+  position: absolute;
+  top: 27%;
+  left: 42.7%;
+  color: #fff;
+  line-height: 1.08;
+}
+
+.ilova-matn h2 {
+  margin-bottom: 22px;
+  font-size: clamp(22px, 3vw, 44px);
+  font-weight: 800;
+}
+
+.ilova-matn img {
+  width: 32vw;
+  max-width: 400px;
+  height: auto;
+}
+
+.hikoyalar {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  padding: 54px 14% 90px;
+  background: #faeee4;
+}
+
+.hikoya-sarlavha {
+  text-align: center;
+  margin: 15px 0 20px;
+}
+
+.hikoya-sarlavha h2 {
+  font-size: 31px;
+  line-height: 1.14;
+  margin-bottom: 10px;
+}
+
+.hikoya-sarlavha p {
+  font-size: 12px;
+}
+
+.fikrlar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: 46px;
+}
+
+.fikr {
+  min-height: 140px;
+  padding: 22px 20px;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 10px 20px rgba(81, 53, 37, 0.08);
+}
+
+.fikr.uzun {
+  min-height: 244px;
+  margin: 0 8%;
+}
+
+.fikr span {
+  display: block;
+  color: #b5ecea;
+  font-size: 26px;
+  line-height: 0.8;
+}
+
+.fikr p {
+  margin: 6px 0 14px 22px;
+  color: #454545;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.fikr b,
+.fikr small {
+  display: block;
+  margin-left: 22px;
+}
+
+.fikr b {
+  font-size: 12px;
+}
+
+.fikr small {
+  margin-top: 4px;
+  color: #aaa;
+  font-size: 10px;
+}
+
+.aloqa {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.past {
+  position: relative;
+  min-height: 264px;
+  display: flex;
+  gap: 80px;
+  padding: 34px 9% 54px;
+  overflow: hidden;
+  color: #ddd;
+  background: #202126;
+}
+
+.ustun {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 10px;
+}
+
+.ustun b {
+  margin-bottom: 8px;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.ustun.yangilik {
+  width: 220px;
+}
+
+.email {
+  display: flex;
+  justify-content: space-between;
+  padding: 9px;
+  border-radius: 5px;
+  background: #45464a;
+  color: #bbb;
+}
+
+.email span {
+  color: #111;
+}
+
+.kolonel {
+  position: absolute;
+  right: 7%;
+  bottom: -95px;
+  width: 290px;
+  opacity: 0.12;
+  filter: brightness(0);
+}
+
+.mualliflik,
+.qonun {
+  position: absolute;
+  bottom: 17px;
+  color: #aaa;
+  font-size: 9px;
+}
+
+.mualliflik {
+  left: 9%;
+}
+
+.qonun {
+  right: 9%;
+}
