@@ -70,22 +70,8 @@ main {
   min-height: 590px;
   display: flex;
   align-items: center;
-  background:
-    radial-gradient(circle at 10% 34%, transparent 0 62px, #ff4937 63px 135px, transparent 136px),
-    radial-gradient(circle at 38% 0%, transparent 0 54px, #ff4937 55px 85px, transparent 86px),
-    linear-gradient(120deg, #ff392c, #ef1e21);
+  background-color: #f52d25;
   overflow: hidden;
-}
-
-.qahramon::after {
-  content: "";
-  position: absolute;
-  right: -120px;
-  top: -40px;
-  width: 380px;
-  height: 380px;
-  border: 55px solid rgba(255, 90, 53, 0.32);
-  border-radius: 50%;
 }
 
 .matn {
